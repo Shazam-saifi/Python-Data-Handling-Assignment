@@ -50,8 +50,6 @@ The project has been developed using Python and follows a modular, object-orient
 
 ---
 
----
-
 ## ETL Workflow
 
 This project follows an **ETL (Extract, Transform, Load)** process to process, analyze, and store the datasets.
