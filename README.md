@@ -50,6 +50,69 @@ The project has been developed using Python and follows a modular, object-orient
 
 ---
 
+---
+
+## ETL Workflow
+
+This project follows an **ETL (Extract, Transform, Load)** process to process, analyze, and store the datasets.
+
+### Extract
+
+The project extracts data from three CSV files using the Pandas library:
+
+- `train.csv`
+- `test.csv`
+- `ideal.csv`
+
+These datasets are loaded into Pandas DataFrames for further processing.
+
+### Transform
+
+The extracted datasets are transformed through several processing stages, including:
+
+- Dataset validation
+- Data preprocessing
+- Calculation of the Sum of Squared Errors (SSE)
+- Selection of the best-fitting ideal function for each training function
+- Mapping of test data to the selected ideal functions using the specified maximum deviation rule
+- Preparation of processed data for visualization and database storage
+
+### Load
+
+The transformed datasets are loaded into a SQLite database using SQLAlchemy. The project stores the processed data in relational tables for efficient querying and analysis.
+
+### ETL Flow Diagram
+
+```
+                CSV Files
+      (train.csv, test.csv, ideal.csv)
+                     │
+                     ▼
+                Extract
+          Read datasets using Pandas
+                     │
+                     ▼
+               Transform
+      • Validate datasets
+      • Calculate SSE
+      • Select ideal functions
+      • Map test data
+      • Prepare processed results
+                     │
+                     ▼
+                  Load
+      Store data into SQLite Database
+                     │
+                     ▼
+         Interactive Visualization
+                using Bokeh
+                     │
+                     ▼
+               Unit Testing
+```
+
+---
+
 ## Project Structure
 
 ```
